@@ -1,0 +1,38 @@
+/* Veterans Memorial Park */
+
+/* Layout */
+html {
+
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Styles */
+
+/* Tools */
+.clear {
+	clear: both;
+}
+
+.floatLeft {
+	float: left;
+}
+
+.floatRight {
+	float: right;
+}
+
+.full {
+	width: 100%;
+}
+
+.half {
+	width: 50%;
+}
+
+.auto {
+	width: auto;
+}
