@@ -1,6 +1,6 @@
 /* Veterans Memorial Park */
 
-/* Layout */
+/* ========== Layout ========== */
 html {
 
 }
@@ -10,9 +10,9 @@ body {
 	padding: 0;
 }
 
-/* Styles */
+/* ========== Styles ========== */
 
-/* Tools */
+/* ========== Tools ========== */
 .clear {
 	clear: both;
 }
@@ -35,4 +35,16 @@ body {
 
 .auto {
 	width: auto;
+}
+
+.alignLeft {
+	text-align: left;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+.alignRight {
+	text-align: right;
 }
