@@ -2,19 +2,36 @@
 
 	class Worker {
 
+		//------------------------------------------------------------ private variables
+		private $connection;
+
 		//------------------------------------------------------------constructor method
 		public function __construct(){
 			// Require DB congifuration and connect to DB
 			require_once('config/config.php');
-			mysql_connect (DB_HOST, USER, PASS) ;
-			mysql_select_db (DB);
+
+			try {
+				// Open connection to the database
+				$this->connection = new PDO("mysql:host=". DB_HOST .";db=" . DB, DB_USER, DB_PASS});
+				// Set error mode
+				$this->connection->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+	        } catch (PDOException $e) {
+	        	// Print error
+	            die($e->getMessage());
+	        }
 		}
 		
 
 		//----------------------------------------------------------deconstructor method
 		public function __destruct() {
-			// Close the connection to the database
-			mysql_close();
+			
+			try {
+				// Close the connection to the database
+				$this->connection = null;
+			} catch (PDOException $e) {
+				// Print error
+				die($e->getMessage());
+			}
 		}
 		
 	}
