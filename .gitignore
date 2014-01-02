@@ -2,3 +2,4 @@ includes/config/config.php
 test/
 .wakatime-project
 *~
+session/
