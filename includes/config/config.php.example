@@ -1,0 +1,19 @@
+<?php
+
+	// Veterans Memorial Configuration File
+	
+	define('SALT', 'examplesalt');				// SALT
+
+	// Database Configuration
+	define("DB_HOST", "localhost");					// Database Host
+	define("DB", "exampledb");						// Database Name
+	define("USER", "exampledb_user"); 				// Database Username
+	define("PASS", "examplepassword");				// Datebase Password
+
+	// SMTP Configuration
+	define("SMTP_HOST", "localhost");				// SMTP Host
+	define("SMTP_PORT", "465");						// SMTP Port
+	define("SMTP_EMAIL", "no-reply@example.com");	// SMTP Email Address
+	define("SMTP_PASS", "examplepassword");			// SMTP Password
+
+?>
