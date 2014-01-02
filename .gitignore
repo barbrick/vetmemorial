@@ -1,3 +1,4 @@
-includes/config/
+includes/config/config.php
+test/
 .wakatime-project
 *~
