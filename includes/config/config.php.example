@@ -2,7 +2,14 @@
 
 	// Veterans Memorial Configuration File
 	
-	define('SALT', 'examplesalt');				// SALT
+	// Set session variables
+	session_save_path('session_directory');			// Directory to save session in
+	ini_set('session.gc_maxlifetime', 3*60*60); 	// Time until Session expires (3*60*60 = 3 hours)
+	ini_set('session.gc_probability', 1);
+	ini_set('session.gc_divisor', 100);
+	ini_set('session.use_only_cookies', TRUE);
+
+	define('SALT', 'examplesalt');					// SALT
 
 	// Database Configuration
 	define("DB_HOST", "localhost");					// Database Host
