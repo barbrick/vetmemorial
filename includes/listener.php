@@ -3,12 +3,12 @@
     $worker = new Worker();
 
     // Create User
-    if (isset($_POST['createUser'])) {
+    if (isset($_POST['createUser']) && $worker->checkSession()) {
         $worker->createUser($_POST['username'], $_POST['password'], $_POST['email'], $_POST['fname'], $_POST['lname']);
     }
     
     // Edit User
-    if (isset($_POST['editUser'])) {
+    if (isset($_POST['editUser']) && $worker->checkSession()) {
         $worker->editUser($_SESSION['username'], $_POST['password'], $_POST['conf']);
     }
     
