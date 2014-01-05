@@ -1,21 +1,22 @@
 <?php
-
 	// Veterans Memorial Configuration File
 	
 	// Set session variables
 	session_save_path('session_directory');			// Directory to save session in
-	ini_set('session.gc_maxlifetime', 3*60*60); 	// Time until Session expires (3*60*60 = 3 hours)
-	ini_set('session.gc_probability', 1);
-	ini_set('session.gc_divisor', 100);
-	ini_set('session.use_only_cookies', TRUE);
+	ini_set('session.gc_maxlifetime', 3*60*60);		// Set session timeout (3 Hours)
+    ini_set('session.gc_probability', 1);
+    ini_set('session.gc_divisor', 100);
+    ini_set('session.cookie_secure', FALSE);
+    ini_set('session.use_only_cookies', TRUE);
+	session_start();
 
 	define('SALT', 'examplesalt');					// SALT
 
 	// Database Configuration
 	define("DB_HOST", "localhost");					// Database Host
 	define("DB", "exampledb");						// Database Name
-	define("USER", "exampledb_user"); 				// Database Username
-	define("PASS", "examplepassword");				// Datebase Password
+	define("DB_USER", "exampledb_user"); 				// Database Username
+	define("DB_PASS", "examplepassword");				// Datebase Password
 
 	// SMTP Configuration
 	define("SMTP_HOST", "localhost");				// SMTP Host
