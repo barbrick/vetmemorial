@@ -24,11 +24,11 @@
 		
 		/**
     	* Function to create user
-        * @arg $username username of the new user
-        * @arg $password password of the new user
-        * @arg $email email of the new user
-        * @arg $fname first name of the new user
-        * @arg $lname last name of the new user
+        * @param $username string username of the new user
+        * @param $password string password of the new user
+        * @param $email string email of the new user
+        * @param $fname string first name of the new user
+        * @param $lname string last name of the new user
 		*/
 		public function createUser($username, $password, $email, $fname, $lname) {
 			// Cleanse Username
@@ -111,9 +111,9 @@
 
         /**
     	* Function to edit password
-        * @arg $username username of the user
-        * @arg $password new password for the user
-        * @arg $conf confirmation of new password for the user
+        * @param $username string username of the user
+        * @param $password string new password for the user
+        * @param $conf string confirmation of new password for the user
 		*/
 		public function editUser($username, $password, $conf) {
 			// Cleanse Username
@@ -170,7 +170,7 @@
 		
 		/**
     	* Function to reset users password
-        * @arg $email email of the user requesting a password reset
+        * @param $email string email of the user requesting a password reset
 		*/
 		public function resetPassword($email) {
 			// Cleanse Email
@@ -179,7 +179,7 @@
 			// Check that all required fields have been provided
 			if (!isset($email) || $email === "") {
 				// Error with input
-				// Redirect to register page
+				// Redirect to login page
 			    header("location:../test/login.php");
 			    exit();
 			} else {
@@ -263,9 +263,35 @@
 		}
 		
 		/**
+    	* Function to get list of users
+        * @return PDO List of users
+		*/
+		public function getUsers() {
+
+			// Prepare SQL statement handle
+			$sql = $this->connection->prepare("SELECT * FROM tblMembers");
+			  
+			// Execute the statement
+			$sql->execute();
+			
+			// Count the results
+			$count = $sql->rowCount();
+			
+			if ($count > 0) {
+				// Users exist
+				return $sql;
+				exit();
+			} else {
+				// No results
+	            return null;
+	            exit();
+			}
+		}
+
+		/**
     	* Function to login user
-        * @arg $username username to verify
-        * @arg $password password to verify
+        * @param $username string username to verify
+        * @param $password string password to verify
 		*/
 		public function login($username, $password) {
 			// Cleanse Username
@@ -329,6 +355,8 @@
 
 		/**
     	* Function to check if user has a current session
+    	* @return boolean true user has a valid session
+    	* @return boolean false user does not have a valid session
 		*/
 		public function checkSession() {
 			// Check if user has a session registered
@@ -352,7 +380,279 @@
 			header("location:../test/login.php");
 			exit();
 		}
+
+		/**
+    	* Function to create news item
+        * @param $title string title of the new post
+        * @param $content string content of the new post
+        * @param $date string date of the new post
+		*/
+		public function addNews($title, $content, $date) {
+			// Cleanse Title
+			$title = htmlspecialchars(strip_tags(trim($title)));
+			
+			// Cleanse Content
+			$content = htmlspecialchars(stripslashes(trim($content)));
+
+			// Cleanse Date
+			$date = htmlspecialchars(stripslashes(trim($date)));
+
+			// Check that all required fields have been provided
+			if (!isset($title) || $title === "" || !isset($content) || $content === "" || !isset($date) || $date === "") {
+				// Error with input
+				// Redirect to admin page
+				echo "error";
+			    //header("location:../test/admin.php");
+			    exit();
+			} else {
+				// All required inputs provided
+
+				// Create the new news post
+
+				// Prepare SQL statement handle
+				$sql = $this->connection->prepare("INSERT INTO tblNews (title, content, post_date) VALUES(:title, :content, :postDate)");
+				  
+				// Bind variables to the SQL statement
+				$sql->bindParam(':title', $title);
+				$sql->bindParam(':content', $content);
+				$sql->bindParam(':postDate', $date);
+
+				// Execute the statement
+				$result = $sql->execute();
+
+				$count = $sql->rowCount();
+				// Fetch the results
+				if ($count > 0) {
+					// Successful
+					// Redirect to admin page
+		           // header("location:../test/admin.php");
+		           echo "worked";
+		            exit();
+				} else {
+					// Error
+					// Redirect to admin page
+					echo"error";
+		            //header("location:../test/admin.php");
+		            exit();
+				}
+			}
+		}
+
+		/**
+    	* Function to edit news item
+    	* @param $id integer id of the post to edit
+        * @param $title string title of the post to edit
+        * @param $content string content of the post to edit
+        * @param $date string date of the post to edit
+		*/
+		public function editNews($id, $title, $content, $date) {
+			// Cleanse ID
+			$id = htmlspecialchars(strip_tags(trim($id)));
+
+			// Cleanse Title
+			$title = htmlspecialchars(strip_tags(trim($title)));
+			
+			// Cleanse Content
+			$content = htmlspecialchars(stripslashes(trim($content)));
+
+			// Cleanse Date
+			$date = htmlspecialchars(stripslashes(trim($date)));
+
+			// Check that all required fields have been provided
+			if (!isset($id) || $id === "" || !isset($title) || $title === "" || !isset($content) || $content === "" || !isset($date) || $date === "") {
+				// Error with input
+				// Redirect to admin page
+			    header("location:../test/admin.php");
+			    exit();
+			} else {
+				// All required inputs provided
+
+				// Edit the news post
+
+				// Prepare SQL statement handle
+				$sql = $this->connection->prepare("UPDATE tblNews SET title = :title, content = :content, post_date = :postDate WHERE id = :id");
+				  
+				// Bind variables to the SQL statement
+				$sql->bindParam(':id', $id);
+				$sql->bindParam(':title', $title);
+				$sql->bindParam(':content', $content);
+				$sql->bindParam(':postDate', $date);
+
+				// Execute the statement
+				$result = $sql->execute();
+
+				$count = $sql->rowCount();
+				// Fetch the results
+				if ($count > 0) {
+					// Successful
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				} else {
+					// Error
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				}
+			}
+		}
 		
+		/**
+    	* Function to delete news item
+    	* @param $id integer id of the post to delete
+		*/
+		public function deleteNews($id) {
+			// Cleanse ID
+			$id = htmlspecialchars(strip_tags(trim($id)));
+
+
+			// Check that all required fields have been provided
+			if (!isset($id) || $id === "") {
+				// Error with input
+				// Redirect to admin page
+			    header("location:../test/admin.php");
+			    exit();
+			} else {
+				// All required inputs provided
+
+				// Delete the news post
+
+				// Prepare SQL statement handle
+				$sql = $this->connection->prepare("DELETE FROM tblNews WHERE id = :id LIMIT 1");
+				  
+				// Bind variables to the SQL statement
+				$sql->bindParam(':id', $id);
+
+				// Execute the statement
+				$result = $sql->execute();
+
+				$count = $sql->rowCount();
+				// Fetch the results
+				if ($count > 0) {
+					// Successful
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				} else {
+					// Error
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				}
+			}
+		}
+
+		/**
+    	* Function to get all news
+        * @return PDO List of news
+		*/
+		public function getNews() {
+
+			// Prepare SQL statement handle
+			$sql = $this->connection->prepare("SELECT * FROM tblNews");
+			  
+			// Execute the statement
+			$sql->execute();
+			
+			// Count the results
+			$count = $sql->rowCount();
+			
+			if ($count > 0) {
+				// Users exist
+				return $sql;
+				exit();
+			} else {
+				// No results
+	            return null;
+	            exit();
+			}
+		}
+
+		/**
+    	* Function to edit page content
+    	* @param $id integer id of the page to edit
+        * @param $title string title of the page to edit
+        * @param $desc string description of the page to edit
+        * @param $content string content of the post to edit
+		*/
+		public function editPage($id, $title, $desc, $content) {
+			// Cleanse ID
+			$id = htmlspecialchars(strip_tags(trim($id)));
+
+			// Cleanse Title
+			$title = htmlspecialchars(strip_tags(trim($title)));
+			
+			// Cleanse Description
+			$desc = htmlspecialchars(strip_tags(trim($desc)));
+
+			// Cleanse Content
+			$content = htmlspecialchars(stripslashes(trim($content)));
+
+
+			// Check that all required fields have been provided
+			if (!isset($id) || $id === "" || !isset($title) || $title === "" || !isset($desc) || $desc === "" || !isset($content) || $content === "") {
+				// Error with input
+				// Redirect to admin page
+			    header("location:../test/admin.php");
+			    exit();
+			} else {
+				// All required inputs provided
+
+				// Edit the news post
+
+				// Prepare SQL statement handle
+				$sql = $this->connection->prepare("UPDATE tblPages SET title = :title, description = :description, content = :content WHERE id = :id");
+				  
+				// Bind variables to the SQL statement
+				$sql->bindParam(':id', $id);
+				$sql->bindParam(':title', $title);
+				$sql->bindParam(':description', $desc);
+				$sql->bindParam(':content', $content);
+
+				// Execute the statement
+				$result = $sql->execute();
+
+				$count = $sql->rowCount();
+				// Fetch the results
+				if ($count > 0) {
+					// Successful
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				} else {
+					// Error
+					// Redirect to admin page
+		            header("location:../test/admin.php");
+		            exit();
+				}
+			}
+		}
+
+		/**
+    	* Function to get list of pages
+        * @return PDO List of pages
+		*/
+		public function getPages() {
+
+			// Prepare SQL statement handle
+			$sql = $this->connection->prepare("SELECT * FROM tblPages");
+			  
+			// Execute the statement
+			$sql->execute();
+			
+			// Count the results
+			$count = $sql->rowCount();
+			
+			if ($count > 0) {
+				// Users exist
+				return $sql;
+				exit();
+			} else {
+				// No results
+	            return null;
+	            exit();
+			}
+		}
 		//---------------------------------------------------------- deconstructor method
 		public function __destruct() {
 			
