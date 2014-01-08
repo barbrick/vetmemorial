@@ -40,7 +40,6 @@ html {
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333333;
-  background-color: #ffffff;
   font-size: 14px;
   line-height: 20px;
   margin: 0;
@@ -212,6 +211,114 @@ hr {
     margin: 10px;
 }
 
+.gallDropdown{
+  margin-top:-10px;
+}
+
+.gallDropmenu {
+  position: relative;
+  overflow: hidden;
+  width: 230px;
+  line-height: 1;
+  margin-bottom:0px;
+  cursor:pointer;
+  margin-left: -10px;
+}
+
+.galDropdown:hover .gallDropmenu {
+  background: #232527;
+}
+
+.gallDropmenu .menu-title {
+  margin: 2px 0;
+  font-weight: bold;
+  color: #4e5257;
+}
+
+.gallDropmenu .selected {
+  margin: 1px;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  cursor:pointer;
+}
+
+.gallDropmenu .caret {
+  position: absolute;
+  right: 130px;
+  top: 60%;
+}
+
+.gallDropmenu-active {
+  display: block;
+  position: absolute;
+  width: 270px;
+  background: #dbe5fc;
+  height: auto;
+  padding: 11px 0;
+  border-bottom: 2px solid #333333;
+  display: none;
+  margin-left:-10px;
+}
+
+.gallDropmenu-active ul {
+  margin: 0;
+}
+
+.gallDropmenu-active li {
+  display: block;
+  font-weight: bold;
+  font-size:14px !important;
+  text-align: center;
+}
+
+.gallDropmenu-active li a {
+  display: block;
+  padding: 4px 20px;
+  cursor:pointer;
+  border: 0 !important;
+  background-color:#dbe5fc;
+  font-weight:bold;
+}
+
+.gallDropmenu-active li a {
+  text-decoration: none;
+  width:100%;
+}
+
+.gallDropmenu-active li a.drop-selected {
+  color: #555555;
+} 
+
+.gallDropmenu-active li a:hover {
+  color: white;
+  background: #555555;
+}
+
+.gallTop {
+  margin-top:20px;
+}
+
+.imageNumber {
+  margin-left:40px !important;
+}
+
+.imageNumber p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: right;
+  line-height: 1;
+  margin-top:20px;
+  margin-bottom:0px;
+}
+
+.imageNumber .number {
+  font-size: 18px;
+}
+
+.gallHeader {
+  margin-bottom: 30px;
+}
 /* ===== NAV ===== */
 
 .nav {
