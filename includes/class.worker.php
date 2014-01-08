@@ -9,6 +9,12 @@
 		public function __construct() {
 			// Require DB congifuration and connect to DB
 			require_once('config/config.php');
+			
+			// Include object classes
+			include('class.user.php');
+			include('class.news.php');
+			include('class.page.php');
+
 			try {
 				// Open connection to the database
 				$this->connection = new PDO("mysql:host=". DB_HOST .";dbname=" . DB, DB_USER, DB_PASS);
@@ -274,18 +280,9 @@
 			// Execute the statement
 			$sql->execute();
 			
-			// Count the results
-			$count = $sql->rowCount();
-			
-			if ($count > 0) {
-				// Users exist
-				return $sql;
-				exit();
-			} else {
-				// No results
-	            return null;
-	            exit();
-			}
+			// Return results
+			return $sql->fetchAll(PDO::FETCH_CLASS, 'User');
+			exit();
 		}
 
 		/**
@@ -554,18 +551,9 @@
 			// Execute the statement
 			$sql->execute();
 			
-			// Count the results
-			$count = $sql->rowCount();
-			
-			if ($count > 0) {
-				// Users exist
-				return $sql;
-				exit();
-			} else {
-				// No results
-	            return null;
-	            exit();
-			}
+			// Return results
+			return $sql->fetchAll(PDO::FETCH_CLASS, 'News');
+			exit();
 		}
 
 		/**
@@ -640,18 +628,9 @@
 			// Execute the statement
 			$sql->execute();
 			
-			// Count the results
-			$count = $sql->rowCount();
-			
-			if ($count > 0) {
-				// Users exist
-				return $sql;
-				exit();
-			} else {
-				// No results
-	            return null;
-	            exit();
-			}
+			// Return results
+			return $sql->fetchAll(PDO::FETCH_CLASS, 'Page');
+			exit();
 		}
 		//---------------------------------------------------------- deconstructor method
 		public function __destruct() {
