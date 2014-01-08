@@ -200,6 +200,18 @@ hr {
     font-style: italic;
 }
 
+#galleryPag {
+    padding-top: 20px;
+}
+
+#gallery {
+    text-align: center;
+}
+
+#gallery img {
+    margin: 10px;
+}
+
 /* ===== NAV ===== */
 
 .nav {

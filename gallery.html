@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="css/pagination.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/lightbox.css">
-    <link rel="stylesheet" href="css/screen.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 
@@ -55,16 +54,16 @@
                 <div class="navbar-inner">
                     <ul class="nav">
 
-                           <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Memorial <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Who can be remembered?</a>
-                                        <a href="#">To have a name listed</a>
-                                        <a href="#">View names on memorial</a>
-                                    </li>
-                                </ul>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Who can be remembered?</a>
+                                    <a href="#">To have a name listed</a>
+                                    <a href="#">View names on memorial</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="active"><a href="gallery.html">Gallery</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -83,7 +82,82 @@
         <!-- Start Content -->
         <section class="content">
             <div class="row-fluid">
-              
+
+                <div class="span12">
+                    <div class="title">
+                        <h3 class="text-center design">Photo Gallery</h3>
+                        <hr />
+                    </div>
+
+                    <div class="content">
+
+                        <p>To view a specific set of photos, please select the specific album from the dropdown :</p>
+
+                        <div id="gallery">
+
+                            <h3>Single images</h3>
+                            <div>
+                                <a href="images/demopage/image-1.jpg" data-lightbox="example-1">
+                                    <img src="images/demopage/thumb-1.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-2" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-3" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-4" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-5" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                            </div>
+
+                            <div>
+                                <a href="images/demopage/image-1.jpg" data-lightbox="example-6">
+                                    <img src="images/demopage/thumb-1.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-7" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-8" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-9" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                                <a href="images/demopage/image-2.jpg" data-lightbox="example-10" title="This is an Optional caption that can go here.">
+                                    <img src="images/demopage/thumb-2.jpg" alt="thumb-1" width="150" height="150" /></a>
+                            </div>
+
+                            <h3>An image set</h3>
+
+                            <div>
+                                <div>
+                                    <a href="images/demopage/image-3.jpg" data-lightbox="example-set" title="Click on the right side of the image to move forward.">
+                                        <img src="images/demopage/thumb-3.jpg" alt="Plants: image 1 0f 4 thumb" width="150" height="150" /></a>
+                                    <a href="images/demopage/image-4.jpg" data-lightbox="example-set" title="Or press the right arrow on your keyboard.">
+                                        <img src="images/demopage/thumb-4.jpg" alt="Plants: image 2 0f 4 thumb" width="150" height="150" /></a>
+                                    <a href="images/demopage/image-5.jpg" data-lightbox="example-set" title="The script preloads the next image in the set as you're viewing.">
+                                        <img src="images/demopage/thumb-5.jpg" alt="Plants: image 3 0f 4 thumb" width="150" height="150" /></a>
+                                    <a href="images/demopage/image-6.jpg" data-lightbox="example-set" title="Click anywhere outside the image or the X to the right to close.">
+                                        <img src="images/demopage/thumb-6.jpg" alt="Plants: image 4 0f 4 thumb" width="150" height="150" /></a>
+                                    <a href="images/demopage/image-6.jpg" data-lightbox="example-set" title="This is the 5th set of images.">
+                                        <img src="images/demopage/thumb-6.jpg" alt="Plants: image 4 0f 4 thumb" width="150" height="150" /></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="galleryPag">
+                            <ul id="pagination-freebie">
+                                <li>
+                                    <!-- Start Freebie -->
+                                    <ul class="pagination dark">
+                                        <li class="prev">Prev</li>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li class="next">Next</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </section>
         <!-- End Content -->
