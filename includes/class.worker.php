@@ -11,9 +11,9 @@
 			require_once('config/config.php');
 			
 			// Include object classes
-			include('class.user.php');
-			include('class.news.php');
-			include('class.page.php');
+			include_once('class.user.php');
+			include_once('class.news.php');
+			include_once('class.page.php');
 
 			try {
 				// Open connection to the database
@@ -331,21 +331,21 @@
 			            $_SESSION['name'] = $name;
 		            
 			            // Redirect to admin page
-			            header("location:../test/admin.php");
+			            header("location:../admin/admin.php");
 			            
 			            exit();
 
 					} else {
 						// User not authenticated
 						// Redirect to login page
-			            header("location:../test/login.php");
+			            header("location:../admin/index.php");
 			            exit();
 					} 
 	        	}
 			} else {
 				// User doesn't exist
 				// Redirect to login page
-	            header("location:../test/login.php");
+	            header("location:../admin/index.php");
 	            exit();
 			}
 		}
@@ -374,7 +374,7 @@
 		public function logout() {
 		    // Destroy session
 			session_destroy();
-			header("location:../test/login.php");
+			header("location:../admin/index.php");
 			exit();
 		}
 
@@ -422,14 +422,12 @@
 				if ($count > 0) {
 					// Successful
 					// Redirect to admin page
-		           // header("location:../test/admin.php");
-		           echo "worked";
+		            header("location:../admin/admin.php");
 		            exit();
 				} else {
 					// Error
 					// Redirect to admin page
-					echo"error";
-		            //header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				}
 			}
@@ -618,18 +616,24 @@
 
 		/**
     	* Function to get list of pages
+    	* @param int Page id
         * @return PDO List of pages
 		*/
-		public function getPages() {
+		public function getPage($id) {
 
 			// Prepare SQL statement handle
-			$sql = $this->connection->prepare("SELECT * FROM tblPages");
-			  
+			$sql = $this->connection->prepare("SELECT * FROM tblPages WHERE id = :id");
+			
+			// Bind parameters
+			$sql->bindParam(":id", $id);
+			
 			// Execute the statement
 			$sql->execute();
 			
 			// Return results
-			return $sql->fetchAll(PDO::FETCH_CLASS, 'Page');
+			//return $sql->fetch(PDO::FETCH_CLASS, 'Page');
+    		$pages = $sql->fetchAll(PDO::FETCH_CLASS, 'Page');
+    		return $pages[0];
 			exit();
 		}
 		//---------------------------------------------------------- deconstructor method

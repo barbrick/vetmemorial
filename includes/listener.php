@@ -1,5 +1,5 @@
 <?php
-    include('../includes/class.worker.php');
+    include('class.worker.php');
     $worker = new Worker();
 
     // Create User
