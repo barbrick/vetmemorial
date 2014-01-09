@@ -48,40 +48,32 @@
 
             </div>
 
-
-            <!-- Start Navigation -->
-            <nav class="navbar">
-                <div class="navbar-inner">
-                    <ul class="nav">
-
-                           <li><a href="#">Link 1</a></li>
-                        <li><a href="#">Link 2</a></li>
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Link 3 <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">Dropdown Link 1</a>
-                                        <a href="#">Dropdown Link 2</a>
-                                        <a href="#">Dropdown Link 3</a>
-                                    </li>
-                                </ul>
-                        </li>
-                        <li class="#"><a href="gallery.html">Link 4</a></li>
-                        <li><a href="#">Link 5</a></li>
-
-
-                        <!---->
-
-                    </ul>
-                </div>
-            </nav>
-            <!-- End Navigation -->
         </header>
         <!-- End Header -->
 
 
         <!-- Start Content -->
         <section class="content">
+
             <div class="row-fluid">
+
+                <div class="span12">
+                    <div class="title">
+                        <h3 class="text-center design">Admin Login</h3>
+                        <hr />
+                    </div>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+
+                <div class="span12 text-center">
+                    <form method="POST" action="../includes/listener.php">
+                        <input type="text" name="username" placeholder="Username" autofocus required/><br/>
+                        <input type="password" name="password" placeholder="Password" required/><br/>
+                        <input type="submit" name="login" value="Login" class="submit" />
+                    </form>
+                </div>
               
             </div>
         </section>

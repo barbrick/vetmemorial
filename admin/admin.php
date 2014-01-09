@@ -1,3 +1,13 @@
+<?php
+    include('../includes/class.worker.php');
+    $worker = new Worker();
+    
+    if ($worker->checkSession()) {
+        // User is authorized
+    } else {
+       header("Location:index.php");
+    }
+?>
 <!doctype html>
 
 <html>
@@ -48,32 +58,40 @@
 
             </div>
 
+
+            <!-- Start Navigation -->
+            <nav class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+
+                           <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Link 3 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">Dropdown Link 1</a>
+                                        <a href="#">Dropdown Link 2</a>
+                                        <a href="#">Dropdown Link 3</a>
+                                    </li>
+                                </ul>
+                        </li>
+                        <li class="#"><a href="gallery.html">Link 4</a></li>
+                        <li><a href="#" onclick="$('#logoutForm').submit();return false;">Logout</a></li>
+
+
+                        <!---->
+
+                    </ul>
+                </div>
+            </nav>
+            <!-- End Navigation -->
         </header>
         <!-- End Header -->
 
 
         <!-- Start Content -->
         <section class="content">
-
             <div class="row-fluid">
-
-                <div class="span12">
-                    <div class="title">
-                        <h3 class="text-center design">Admin Login</h3>
-                        <hr />
-                    </div>
-                </div>
-            </div>
-
-            <div class="row-fluid">
-
-                <div class="span12 text-center">
-                    <form>
-                     <input type="text" name="username" placeholder="Username" autofocus/><br/>
-                     <input type="password" name="password" placeholder="Password"/><br/>
-                     <input type="submit" name="submit" value="Login" class="submit" />
-                    </form>
-                </div>
               
             </div>
         </section>
@@ -86,7 +104,9 @@
             <p>&copy; 2013 <a href="http://www.veteranmemorialpark.com" class="title">Veterans Memorial Park</a> <span class="pull-right">Designed by: <a href="http://www.gillamwright.com" target="_blank" class="title">Shawn Gillam-Wright</a> &amp; <a href="https://plus.google.com/+TrevorBarbrick" target="_blank" class="title">Trevor Barbrick</a></span></p>
         </footer>
         <!-- End Footer -->
-
+        <form id="logoutForm" action="../includes/listener.php" method="POST" >
+            <input type="hidden" name="logout"/>
+        </form>
     </div>
     <!-- End Container -->
 
