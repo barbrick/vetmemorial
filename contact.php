@@ -54,8 +54,8 @@
                 <div class="navbar-inner">
                     <ul class="nav">
 
-                           <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about.php">About</a></li>
                         <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Memorial <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     <li>
@@ -65,8 +65,8 @@
                                     </li>
                                 </ul>
                         </li>
-                        <li class="active"><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
+                        <li class="active"><a href="contact.php">Contact</a></li>
 
 
                         <!---->
@@ -91,7 +91,7 @@
 
         <!-- Start Footer -->
         <footer class="footer">
-            <p>&copy; 2013 <a href="http://www.veteranmemorialpark.com" class="title">Veterans Memorial Park</a> <span class="pull-right">Designed by: <a href="http://www.gillamwright.com" target="_blank" class="title">Shawn Gillam-Wright</a> &amp; <a href="https://plus.google.com/+TrevorBarbrick" target="_blank" class="title">Trevor Barbrick</a></span></p>
+            <p>&copy; <?php echo date("Y") ?> <a href="http://www.veteranmemorialpark.com" class="title">Veterans Memorial Park</a> <span class="pull-right">Designed by: <a href="http://www.gillamwright.com" target="_blank" class="title">Shawn Gillam-Wright</a> &amp; <a href="http://www.barbrick.com" target="_blank" class="title">Trevor Barbrick</a></span></p>
         </footer>
         <!-- End Footer -->
 
@@ -104,6 +104,5 @@
     <script src="js/dropdown.js"></script>
     <script src="js/lightbox-2.6.min.js"></script>
     <script src="js/modernizr.custom.js"></script>
-
 </body>
 </html>

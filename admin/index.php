@@ -83,7 +83,7 @@
 
         <!-- Start Footer -->
         <footer class="footer">
-            <p>&copy; 2013 <a href="http://www.veteranmemorialpark.com" class="title">Veterans Memorial Park</a> <span class="pull-right">Designed by: <a href="http://www.gillamwright.com" target="_blank" class="title">Shawn Gillam-Wright</a> &amp; <a href="https://plus.google.com/+TrevorBarbrick" target="_blank" class="title">Trevor Barbrick</a></span></p>
+            <p>&copy; <?php echo date("Y") ?> <a href="http://www.veteranmemorialpark.com" class="title">Veterans Memorial Park</a> <span class="pull-right">Designed by: <a href="http://www.gillamwright.com" target="_blank" class="title">Shawn Gillam-Wright</a> &amp; <a href="http://www.barbrick.com" target="_blank" class="title">Trevor Barbrick</a></span></p>
         </footer>
         <!-- End Footer -->
 
