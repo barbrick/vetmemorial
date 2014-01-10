@@ -65,17 +65,18 @@
                 </div>
             </div>
 
-            <div class="row-fluid">
+          <div class="row-fluid login">
 
-                <div class="span12 text-center">
-                    <form method="POST" action="../includes/listener.php">
-                        <input type="text" name="username" placeholder="Username" autofocus required/><br/>
-                        <input type="password" name="password" placeholder="Password" required/><br/>
-                        <input type="submit" name="login" value="Login" class="submit" />
-                    </form>
-                </div>
-              
-            </div>
+            <form method="POST" action="../includes/listener.php">
+              <input type="text" class="text-center marginLeftNone" name="username" placeholder="Username" autofocus="" required=""/>
+              <br/>
+              <input type="password" class="text-center marginLeftNone" name="password" placeholder="Password" required=""/>
+              <br/>
+              <br />
+              <input type="submit" class="text-center submit marginLeftNone" name="login" value="Login"/>
+            </form>
+
+          </div>
         </section>
         <!-- End Content -->
 

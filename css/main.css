@@ -348,10 +348,24 @@ input,textarea {
   margin-left: 10px;
   background-color: #dbe5fc !important;
   margin: 10px 10px 10px 105px;
+  margin-left:167px !important;
   font-weight: bold !important;
   height: auto;
 }
 
+.marginLeftNone {
+    margin-left: 0px !important;
+}
+
+.login {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width:33% !important;
+}
+
+.login input {
+    width: 100% !important;
+}
 /* ===== NAV ===== */
 
 .nav {
