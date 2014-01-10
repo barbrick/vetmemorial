@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="../css/pagination.css">
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/lightbox.css">
+    <link rel="stylesheet" href="../css/ui-lightness/jquery-ui-1.10.3.min.css">
     <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 
@@ -92,7 +93,34 @@
         <!-- Start Content -->
         <section class="content">
             <div class="row-fluid">
-              
+              <h1>Create New User</h1>
+            <form action="../includes/listener.php" method="POST">
+                <input id="username" name="username" type="text" placeholder="Username..." required /><br />
+                <input id="password" name="password" type="password" placeholder="Password..." required /><br />
+                <input id="email" name="email" type="email" placeholder="Email..." required /><br />
+                <input id="fname" name="fname" type="text" placeholder="First Name..."/><br />
+                <input id="lname" name="lname" type="text" placeholder="Last Name..."/><br /><br />
+                <input type="submit" id="createUser" name="createUser" value="Create User" />
+            </form>
+            
+        <hr />
+        
+        <h1>Edit Password</h1>
+            <form action="../includes/listener.php" method="POST">
+                <input id="password" name="password" type="password" placeholder="New Password..." required/><br />
+                <input id="conf" name="conf" type="password" placeholder="Confirm New Password..." required/><br /><br />
+                <input type="submit" id="editUser" name="editUser" value="Update Settings" />
+            </form>
+        
+        <hr />
+        
+        <h1>New News</h1>
+            <form action="../includes/listener.php" method="POST">
+                <input id="title" name="title" type="text" placeholder="Title..." required/><br />
+                <textarea id="content" class="ckeditor" name="content" type="text" placeholder="Content..." required></textarea><br />
+                <input id="date" name="date" type="text" placeholder="Date..." required/><br /><br />
+                <input type="submit" id="addNews" name="addNews" value="Submit News" />
+            </form>
             </div>
         </section>
         <!-- End Content -->
@@ -116,6 +144,8 @@
     <script src="../js/dropdown.js"></script>
     <script src="../js/lightbox-2.6.min.js"></script>
     <script src="../js/modernizr.custom.js"></script>
-
+    <script src="../js/editor/ckeditor.js"></script>
+    <script src="../js/main.js"></script>
+    <style>.cke { width: 50% !important; }</style>
 </body>
 </html>

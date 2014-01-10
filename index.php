@@ -1,8 +1,7 @@
 <?php
     include('includes/class.display.php');
     $display = new Display();
-    $worker = new Worker();
-    $page = $worker->getPage(1);
+    $page = $display->getPage(1);
 ?>
 <!doctype html>
 
@@ -96,7 +95,7 @@
                     </div>
 
                     <div class="content">
-                        <?php echo $page->content; ?>
+                        <?php echo htmlspecialchars_decode($page->content); ?>
                     </div>
 
                 </div>

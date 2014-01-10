@@ -3,3 +3,4 @@ test/
 .wakatime-project
 *~
 admin/session/
+sftp-config.json

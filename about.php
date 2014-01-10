@@ -1,12 +1,17 @@
+<?php
+    include('includes/class.display.php');
+    $display = new Display();
+    $page = $display->getPage(2);
+?>
 <!doctype html>
 
 <html>
 <!-- HEAD -->
 <head>
     <meta charset="utf-8">
-    <meta name="description" content="Veterans Memorial Park in Bass River Nova Scotia. A living memorial to those who served">
+    <meta name="description" content="<?php echo $page->description; ?>">
     <meta name="viewport" content="width=device-width">
-    <title>Veterans Memorial Park | Bass River, NS</title>
+    <title>Veterans Memorial Park | <?php echo $page->title; ?></title>
 
     <!-- Authors -->
     <link rel="author" href="https://plus.google.com/+TrevorBarbrick" />

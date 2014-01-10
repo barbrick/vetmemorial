@@ -14,7 +14,7 @@
 		//------------------------------------------------------------ public methods
 		
 		/**
-    	* Function to display news snippts
+    * Function to display news snippts
 		*/
 		public function getNews() {
     	    $postsPerPage = 5;
@@ -187,5 +187,16 @@
         return $truncate;
         
         }
+      
+      
+      /**
+      * Function to get page object
+      * @param $id integer page id
+      * @return Page object holding page content
+      */
+      public function getPage($id) {
+          return $this->worker->getPage($id);
+      }
+
 	}
 ?>
