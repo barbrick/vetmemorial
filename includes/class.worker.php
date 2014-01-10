@@ -55,8 +55,8 @@
 			// Check that all required fields have been provided
 			if (!isset($username) || $username === "" || !isset($password) || $password === "" || !isset($email) || $email === "") {
 				// Error with input
-				// Redirect to register page
-			    header("location:../test/admin.php");
+				// Redirect to admin page
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -76,8 +76,8 @@
 				// Fetch the results
 				if ($count > 0) {
 					// User aready exists
-					// Redirect to register page
-		            header("location:../test/admin.php");
+					// Redirect to admin page
+		            header("location:../admin/admin.php");
 		            exit();
 				} else {
 					// Create the new user
@@ -103,12 +103,13 @@
     				if ($count > 0) {
 						// Successful
 						// Redirect to login page
-			            header("location:../test/login.php");
+						$this->logout();
+			            header("location:../admin/index.php");
 			            exit();
 					} else {
 						// Error
 						// Redirect to register page
-			            header("location:../test/admin.php");
+			            header("location:../admin/admin.php");
 			            exit();
 					}
 				}
@@ -133,7 +134,7 @@
 			if (!isset($username) || $username === "" || !isset($password) || $password === "" || !isset($conf) || $conf === "") {
 				// Error with input
 				// Redirect to register page
-			    header("location:../test/admin.php");
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -141,7 +142,7 @@
                 // Check that passwords match
                 if ($password !== $conf) {
                     // Passwords do not match
-                    header("location:../test/admin.php");
+                    header("location:../admin/admin.php");
     			    exit();
                 } else {
                     // Salt and Hash the password
@@ -167,7 +168,7 @@
     				} else {
     					// Error
     					// Redirect to register page
-    		            header("location:../test/admin.php");
+    		            header("location:../admin/admin.php");
     		            exit();
     				}
                 }
@@ -186,7 +187,7 @@
 			if (!isset($email) || $email === "") {
 				// Error with input
 				// Redirect to login page
-			    header("location:../test/login.php");
+			    header("location:../admin/index.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -228,8 +229,8 @@
                     $mail->AddAddress($email, $toName);
                     $mail->Subject = 'Veteransmemorial.com Password Reset';
                     $mail->IsHTML(true);
-                    $mail->Body = "<body style=\"text-align: center\"><h1>You have requested a new password.</h1><p>Here's a new one for you, I suggest you change it immediately.</p><p><i>" . $password . "</i></p><a href=\"http://veteransmemorial.com/admin/login.php\">Login</a></body>";
-                    $mail->AltBody = "You have requested a new password.\r\nHere's a new one for you, I suggest you change it immediately.\r\n" . $password . "\r\nhttp://veteransmemorial.com/admin/login.php";
+                    $mail->Body = "<body style=\"text-align: center\"><h1>You have requested a new password.</h1><p>Here's a new one for you, I suggest you change it immediately.</p><p><i>" . $password . "</i></p><a href=\"http://veteransmemorial.com/admin/index.php\">Login</a></body>";
+                    $mail->AltBody = "You have requested a new password.\r\nHere's a new one for you, I suggest you change it immediately.\r\n" . $password . "\r\nhttp://veteransmemorial.com/admin/index.php";
                     $mail->WordWrap = 70;
                     $mail->Send();
             
@@ -251,18 +252,18 @@
     				if ($count > 0) {
 						// Successful
 						// Redirect to login page
-			            header("location:../test/login.php");
+			            header("location:../admin/index.php");
 			            exit();
 					} else {
 						// Error
 						// Redirect to login page
-			            header("location:../test/login.php");
+			            header("location:../admin/index.php");
 			            exit();
 					}
 				} else {
 				    // Email does not exist
 				    // Redirect to login page
-		            header("location:../test/login.php");
+		            header("location:../admin/index.php");
 		            exit();
 				}
 			}
@@ -398,8 +399,7 @@
 			if (!isset($title) || $title === "" || !isset($content) || $content === "" || !isset($date) || $date === "") {
 				// Error with input
 				// Redirect to admin page
-				echo "error";
-			    //header("location:../test/admin.php");
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -457,7 +457,7 @@
 			if (!isset($id) || $id === "" || !isset($title) || $title === "" || !isset($content) || $content === "" || !isset($date) || $date === "") {
 				// Error with input
 				// Redirect to admin page
-			    header("location:../test/admin.php");
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -481,12 +481,12 @@
 				if ($count > 0) {
 					// Successful
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				} else {
 					// Error
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				}
 			}
@@ -505,7 +505,7 @@
 			if (!isset($id) || $id === "") {
 				// Error with input
 				// Redirect to admin page
-			    header("location:../test/admin.php");
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -526,12 +526,12 @@
 				if ($count > 0) {
 					// Successful
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				} else {
 					// Error
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				}
 			}
@@ -579,7 +579,7 @@
 			if (!isset($id) || $id === "" || !isset($title) || $title === "" || !isset($desc) || $desc === "" || !isset($content) || $content === "") {
 				// Error with input
 				// Redirect to admin page
-			    header("location:../test/admin.php");
+			    header("location:../admin/admin.php");
 			    exit();
 			} else {
 				// All required inputs provided
@@ -603,12 +603,12 @@
 				if ($count > 0) {
 					// Successful
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				} else {
 					// Error
 					// Redirect to admin page
-		            header("location:../test/admin.php");
+		            header("location:../admin/admin.php");
 		            exit();
 				}
 			}

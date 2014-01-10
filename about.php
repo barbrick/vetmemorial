@@ -96,33 +96,7 @@
 
                     <div class="content">
 
-                        <p>
-                         The Veterans Memorial Park was Founded and designed by Dr. Karen Ewing 
-                        </p>
-
-                        <p>
-                        Three intersecting gardens in the form of a Celtic flower create a living memorial to those who served. The Garden of Sorrows, The Garden of Remembrance and the Garden of Hope. The entrance to the Park allows access to each garden individually.
-                        </p>
-
-                        <p>
-The Garden design invites the visitor to first enter the Garden on the left, The Garden of Sorrows. John Oxenham's Poem "Tread Softly Here" sets the tone of this garden designed as a World War I trench.  Visitors experience the illusion of stepping down into the trench. Sandbags hold back the black mulch covered earth. To the right red roses climb a barbed wire trellis isolating the visitor. The landscape is black and barren interspersed with occasional black iris ,black tulip, bleeding heart or red poppy. Corkscrew Hazels, weeping juniper and "X" cross barriers interrupt the barren landscape and an upturned soldiers helmet poses a stark reminder of the sacrifice. At intervals vignettes of soldiers from this area will be displayed.
-                        </p>
-
-                        <p>
-A corner turned "away from war" and the garden softens as you walk out of the trench and enter the Garden of Remembrance. Here flowering trees, shrubs, daisies, lilies and forget-me-nots among others provide sights and scents of years past, allowing an attitude of Remembrance. Benches surround the central podium where names of those who served mark each stone.
-                        </p>
-
-                        <p>
-From the Garden of Remembrance visitors enter the Garden of Hope. This garden is a colourful international garden. visitors will note the presence of trees, shrubs and plants from many countries including Japanese Maple, Korean Lilacs, Siberian Iris, and German Edelweiss all speaking to the hope of reconciliation, with hope for the future and thankfulness for the lives and the freedoms we now enjoy.
-                        </p>
-
-                        <p>
-                            At night a solar powered floodlight will announce the name of the park. The parking area itself will house a sign recognizing corporate donations, a sign announcing the name and purpose of the park and a flag pole. The floodlight and stencil will be housed in a locked enclosed box with a donation box.
-                        </p>
-
-                        <p>
-                             All areas of the park are wheelchair accessible. The park's monument will be inclusive for those who served their country. The Park allows an experience of the sorrows, the remembrance, and of the hope for the future. Remembering that every freedom we enjoy, every measure of land we call home, was fought for and won.
-                        </p>
+                       <?php echo htmlspecialchars_decode($page->content); ?>
 
                     </div>
 
