@@ -48,27 +48,27 @@
                 if ($page > 1) {
         			$prev = ($page - 1);
         			if ($page > 2) {
-            			echo "<a href=\"index.php?page=1\"><li class='prev'>&lt;&lt;</li></a>";
+            			echo "<li class='prev'><a href=\"index.php?page=1\">&lt;&lt;</a></li>";
         			}
-        		    echo "<a href=\"index.php?page=$prev\"><li class='prev'>Prev</li></a>";
+        		    echo "<li class='prev'><a href=\"index.php?page=$prev\">Prev</a></li>";
         		}
         			
         		for($i = 1; $i <= $totalPages; $i++) {
         		    if ($page == $i) {
-        		        echo "<a href='#'><li>$i</li></a>";
+        		        echo "<li><a href='#'>$i</a></li>";
         		    }
         			else {
         			    if ($i > ($page - 2) && $i < ($page + 2)) {
-        			        echo "<a href=\"index.php?page=$i\"><li>$i</li></a>";
+        			        echo "<li><a href=\"index.php?page=$i\">$i</a></li>";
         			    }
         			}
         		}
         				
         		if ($page < $totalPages) {
         		   $next = ($page + 1);
-        		   echo "<a href=\"index.php?page=$next\"><li class='next'>Next</li></a>";
+        		   echo "<li class='next'><a href=\"index.php?page=$next\">Next</a></li>";
         		   if ($page < ($totalPages - 1)) {
-        		       echo "<a href=\"index.php?page=$totalPages\"><li class='next'>&gt;&gt;</li></a>";
+        		       echo "<li class='next'><a href=\"index.php?page=$totalPages\">&gt;&gt;</a></li>";
         		   }
         		}
         	}
