@@ -32,7 +32,7 @@ ul.pagination {
     margin:0px;
 }
 
-    ul.pagination li {
+    ul.pagination li a {
         float: left;
         padding: 6px 5px 5px 5px;
         min-width: 30px;
@@ -44,17 +44,17 @@ ul.pagination {
         border-radius: 2px;
     }
 
-        ul.pagination li:last-child {
+        ul.pagination li a:last-child {
             margin-right: 0;
         }
 
-        ul.pagination li.prev, ul.pagination li.next {
+        ul.pagination li a.prev, ul.pagination li a.next {
             padding-left: 10px;
             padding-right: 10px;
         }
 
     /*! Colors */
-    ul.pagination.dark li {
+    ul.pagination.dark li a {
         color: #fff;
         border: 1px solid #43505e;
         /* Background Gradient */
@@ -74,7 +74,7 @@ ul.pagination {
         text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
     }
         /* Dark Mouse Events */
-        ul.pagination.dark li:hover {
+        ul.pagination.dark li a:hover {
             background: #556270; /* Old browsers */
             background: -moz-linear-gradient(top, #556270 0%, #5b6774 100%); /* FF3.6+ */
             background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#556270), color-stop(100%,#5b6774)); /* Chrome,Safari4+ */
@@ -86,7 +86,7 @@ ul.pagination {
             cursor: pointer;
         }
 
-        ul.pagination.dark li:active {
+        ul.pagination.dark li a:active {
             background: #414952; /* Old browsers */
             background: -moz-linear-gradient(top, #414952 0%, #555e68 100%); /* FF3.6+ */
             background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#414952), color-stop(100%,#555e68)); /* Chrome,Safari4+ */
