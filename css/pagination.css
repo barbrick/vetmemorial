@@ -37,7 +37,7 @@ ul.pagination {
         padding: 6px 5px 5px 5px;
         min-width: 30px;
         text-align: center;
-        margin-right: 10px;
+        margin-right: 10px !important;
         /* Radius */
         -webkit-border-radius: 2px;
         -moz-border-radius: 2px;
